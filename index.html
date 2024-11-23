@@ -14,16 +14,46 @@
     <script defer src="./script/index.js"></script>
     <script defer src="./script/forecast.js"></script>
   </head>
+
   <body>
+    <video autoplay loop muted playsinline class="background-clip">
+      <source src="./images/1107652539-preview.mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <div class="container my-5 mx-auto">
-        <h1 class="text-muted text-center my-4">Today's Weather</h1>
-        <form class="change-location my-4 text-center text-muted">
-            <label for="city" class="form-label">Enter a Location for Weather Info</label>
-            <input type="text" id="city" name="city" class="form-control p-3 mx-auto w-75" placeholder="Enter city name" />
-            <button type="submit" class="btn btn-primary mt-3">Get Weather</button>
-        </form>
+      <h1 class="text-muted text-center my-4">Today's Weather</h1>
+      <form class="change-location my-4 text-center text-muted">
+        <label for="city" class="words form-label"
+          >Enter a Location for Weather Info</label
+        >
+        <input
+          type="text"
+          id="city"
+          name="city"
+          class="form-control p-3 mx-auto w-1002`1az"
+          placeholder="Enter city name"
+        />
+        <!-- <button type="submit" class="btn btn-primary mt-3">Get Weather</button> -->
+      </form>
     </div>
-    
+    <div class="container d-flex justify-content-center my-5">
+      <div class="card shadow-lg rounded" style="width: 18rem">
+        <img
+          src="./images/final-image.jpg"
+          alt="placeholdercomputer"
+          class="time card-img-top"
+        />
+        <div class="icon bg-light mx-auto text-center"></div>
+        <div class="text-muted text-uppercase text-center details">
+          <h5 class="my-3">City name</h5>
+          <div class="my-3">Weather condition</div>
+          <div class="display-4 my-4">
+            <span>temp</span>
+            <span>&deg;F</span>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
