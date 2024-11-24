@@ -22,13 +22,15 @@ const updateUI = (data) => {
     </div>
   `;
   //update the night/day & icon images
+  const iconSrc = `images/icons/${weather.WeatherIcon}.svg`;
+  icon.setAttribute("src", iconSrc);
 
-  let timeSrc = null;
-  if (weather.IsDayTime) {
-    timeSrc = "images/day.jpg";
-  } else {
-    timeSrc = "images/night.jpg";
-  }
+  let timeSrc = weather.IsDayTime ? "images/day.jpg" : "images/night.jpg";
+  //   if (weather.IsDayTime) {
+  //     timeSrc = "images/day.jpg";
+  //   } else {
+  //     timeSrc = "images/night.jpg";
+  //   }
 
   time.setAttribute("src", timeSrc);
   //remove the d-none class
@@ -42,6 +44,12 @@ const updateUI = (data) => {
 const updateCity = async (city) => {
   const cityDets = await getCity(city);
   const weather = await getWeather(cityDets.Key);
+
+  // Error handling: Check if the city details or weather data are missing
+  if (!cityDets || !weather) {
+    alert("City not found or there was an error fetching the weather data.");
+    return;
+  }
 
   return { cityDets, weather };
 };
@@ -57,5 +65,8 @@ cityForm.addEventListener("submit", (evt) => {
   // Fetch and update the UI with new city data
   updateCity(city)
     .then((data) => updateUI(data))
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      alert("City not found or there was an error fetching the weather data.");
+    });
 });

@@ -37,3 +37,10 @@ video.background-clip {
   display: inline-block; /* Ensure the background fits snugly around the text */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
+.icon {
+  position: relative;
+  top: -50px;
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: -50px;
+}
