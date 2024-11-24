@@ -1,5 +1,5 @@
 body {
-  background-color: pink;
+  /* background-color: pink; */
   letter-spacing: 0.2em;
   font-size: 0.8em;
 }
@@ -17,6 +17,23 @@ video.background-clip {
   object-fit: cover;
   z-index: -1;
 }
+.watermark-cover {
+  position: fixed;
+  top: 60%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* True centering */
+  width: 750px; /* Match the watermark's width */
+  height: 300px; /* Match the watermark's height */
+  background-color: rgba(255, 192, 203, 0.9); /* Semi-transparent background */
+  z-index: 0; /* Above the video */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+}
+
 .words {
   background-color: rgba(255, 192, 203, 0.5);
+  padding: 0.5em 1em; /* Add padding for better spacing */
+  border-radius: 8px; /* Rounded edges for a softer look */
+  display: inline-block; /* Ensure the background fits snugly around the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
